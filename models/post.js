@@ -20,15 +20,10 @@ const postSchema = new Schema({
     },
     image:{
         type:String
-    },
-    createdBy:{
-        type:mongoose.Types.ObjectId,
-        ref:'User',
-        required:true
     }
 
-},{timestamps})
+},{timestamps:true})
 
-const POSTS = module.model('POST',postSchema);
+const POSTS = mongoose.model('POST',postSchema);
 
 module.exports = POSTS
